@@ -1,6 +1,17 @@
-window.onload = (event) => {
-    console.log('page is fully loaded!');
+let family = [
+    {link: '/linksometing', text: 'Child Abduction'},
+    {link: '/linksometing', text: 'Child Holiday Arrangements'},
+    {link: '/linksometing', text: 'Child Residency & Contact'},
+    {link: '/linksometing', text: 'Civil Partnership Breakdown'},
+    {link: '/linksometing', text: 'Cohabitation'},
+    {link: '/linksometing', text: 'Cohabitation breakdown'},
+    {link: '/linksometing', text: 'Domestic Violence'},
+    {link: '/linksometing', text: 'Family Mediation'},
+    {link: '/linksometing', text: 'Gender Recognition'},
+    {link: '/linksometing', text: 'Other Child Issues'},
+]
 
+window.onload = (event) => {
     function run() {
         let experimentContent = document.createElement('div')
         experimentContent.classList.add('rwd-bs')
@@ -13,10 +24,10 @@ window.onload = (event) => {
         experimentContent.appendChild(createTopBanner())
         c.appendChild(createIntroSection())
         c.appendChild(createCategories())
+        c.appendChild(createBar())
         c.appendChild(createReviewsSection())
         c.appendChild(createFaqsSection())
         c.appendChild(createLogosSection())
-        //c.appendChild(createTopFooter())
 
         mainSection.appendChild(c)
 
@@ -24,8 +35,6 @@ window.onload = (event) => {
         
         let header = document.querySelector('header')
         header.after(experimentContent)
-
-        removeExsiting()
         
         $('.accordion').click(function () {
             $(this).toggleClass('accordion--open')
@@ -49,6 +58,46 @@ window.onload = (event) => {
                 }
             }).mount()
         }, 1000);
+    }
+
+    function createModal() {
+        let tlsModal = document.createElement('div')
+        tlsModal.id = 'tlsModal'
+        tlsModal.classList.add('hide', 'allowhide')
+        tlsModal.addEventListener('click', hideModal, false)
+
+        let innerModal = document.createElement('div')
+        innerModal.classList.add('innermodal')
+
+        let c = createContainer()
+        let h1 = document.createElement('h1')
+        h1.id = 'modalTitle'
+        h1.classList.add('py-1')
+        h1.innerHTML = 'What legal area do you need help with?'
+        c.appendChild(h1)
+
+        let modalbread = document.createElement('div')
+        modalbread.classList.add('modalbread', 'py-1')
+
+        modalbread.innerHTML = "<span onclick='hideModal()'>All services</span><i class='fa fa-chevron-right'></i><span class='spancat'></span>"
+        c.appendChild(modalbread)
+
+        let subCats = document.createElement('div')
+        subCats.id = 'subcats'
+        subCats.classList.add('py-1')
+        c.appendChild(subCats)
+
+        let backBtn = document.createElement('button')
+        backBtn.classList.add('allowhide', 'btn', 'py-1')
+        backBtn.addEventListener('click', hideModal, false)
+        backBtn.innerHTML = "<i class='fa fa-chevron-left'></i> Back"
+
+        c.appendChild(backBtn)
+        innerModal.appendChild(c)
+
+        tlsModal.appendChild(innerModal)
+
+        document.querySelector('body').appendChild(tlsModal)
     }
 
     function createTopBanner() {
@@ -187,11 +236,44 @@ window.onload = (event) => {
             link.href = this.link
             link.innerHTML = `<div>${this.icon}</div><div><strong>${this.name}</strong><p>${this.content}</p></div><div><i class="fa-solid fa-arrow-right"></i></div>`
 
+            link.dataset.cat = this.name
+
+            link.addEventListener('click', showModal, false)
             cat.appendChild(link)
 
             return cat
         }
         return cats
+    }
+
+    function  createBar() {
+        let bar = document.createElement('section')
+        bar.id = 'bar'
+        let c = createContainer()
+
+        let steps = [
+            {icon: "<i class='fa fa-check'></i>", text: 'Fill in form get quotes'},
+            {icon: "<i class='fa fa-check'></i>", text: 'Fill in form get quotes'},
+            {icon: "<i class='fa fa-check'></i>", text: 'Fill in form get quotes'},
+        ]
+
+        steps.forEach(step => {
+            c.appendChild(new createStep(step.icon, step.text))
+        })
+
+        function createStep(icon, text) {
+            this.icon = icon
+            this.text = text
+
+            let barStep = document.createElement('div')
+            barStep.classList.add('barStep')
+
+            barStep.innerHTML = `${this.icon}<p>${this.text}</p>`
+            return barStep
+        }
+
+        bar.appendChild(c)
+        return bar
     }
 
     function createFaqsSection() {
@@ -517,49 +599,51 @@ return faqs
         return topFooter
     }
 
+    //don't include in production
+    document.querySelector('head').innerHTML += '<style>.tls-cookie-popup {display: none !important;}.footer{display:none;}</style>'
+
     
+    createModal()
+    run()
+    
+    function showModal(event) {
+        event.preventDefault()
+        console.log(event.target.dataset.cat)
+        let modal = document.querySelector('#tlsModal')
+        if (modal) modal.classList.remove('hide')
 
-    // function buildNesting(data){
-    //     let topEl = null
-    //     let myEls = []
+        let cat = event.target.dataset.cat
+        
+        document.querySelector('.spancat').innerHTML = cat
 
-    //     data.forEach((item, i) => {
-    //         let x = document.createElement(item.el)
-    //         x.classList.add(item.classname)
-    //         if(item.sib) x.classList.add('sib')
-    //         myEls.push(x)
-    //     })
-
-    //     for (let i = 0; i < myEls.length; i++) {
-    //         if(i === 0) {
-    //             topEl = myEls[i]
-    //             continue
-    //         }
-    //         if(myEls[i].classList.contains('sib')) {
-    //             myEls[i - 2].appendChild(myEls[i])
-    //             myEls[i].classList.remove('sib')
-    //         } else {
-    //             myEls[i - 1].appendChild(myEls[i])
-    //         }
-    //     }
-    //     return topEl
-    // }
-
-    function removeExsiting() {
-        //document.querySelector('.slideshow').remove()
+        document.querySelector('#subcats').innerHTML = generateModalLinks(cat)
+        
     }
 
-    //don't include in production
-    console.log(document.querySelector('head').innerHTML += '<style>.tls-cookie-popup {display: none !important;}.footer{display:none;}</style>')
+    function generateModalLinks(cat) {
+        let links = []
+        let html = ''
+        if (cat === 'Family') links = family
+
+        links.forEach(link => {
+            html += `<a href='${link.link}'>${link.text}</a>`
+        })
+        return html
+    }
+
+    function hideModal(event) {
+        //console.log(event)
+        if (event.target.classList.contains('allowhide')) {
+            let modal = document.querySelector('#tlsModal')
+            modal.classList.add('hide')
+        }
+    }
 
     function createContainer() {
         let c = document.createElement('div')
         c.classList.add('container')
         return c
     }
-
-    run()
-    
 };
 
 function expandCat(el) {
