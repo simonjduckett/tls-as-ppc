@@ -1,27 +1,26 @@
-//window.onload = (event) => {
+window.onload = (event) => {
     console.log('page is fully loaded!');
 
     function run() {
         let experimentContent = document.createElement('div')
         experimentContent.classList.add('rwd-bs')
 
-        experimentContent.appendChild(createHero())
-        experimentContent.appendChild(createTopCards())
-        experimentContent.appendChild(createCategories())
-        experimentContent.appendChild(createWorksSection())
-        experimentContent.appendChild(createWhoSection())
-        experimentContent.appendChild(createFaqsSection())
-        experimentContent.appendChild(createReviewsSection())
-        experimentContent.appendChild(createLogosSection())
-        experimentContent.appendChild(createTopFooter())
+        let mainSection = document.createElement('main')
+        mainSection.id = 'mainSection'
 
+        let c = createContainer()
 
-        // experimentContent.appendChild(buildNesting([
-        //     { el: 'div', classname: 'container' },
-        //     { el: 'div', classname: 'row' },
-        //     { el: 'div', classname: 'col-12' },
-        //     { el: 'div', classname: 'col-12', sib: true }
-        // ]))
+        experimentContent.appendChild(createTopBanner())
+        c.appendChild(createIntroSection())
+        c.appendChild(createCategories())
+        c.appendChild(createReviewsSection())
+        c.appendChild(createFaqsSection())
+        c.appendChild(createLogosSection())
+        //c.appendChild(createTopFooter())
+
+        mainSection.appendChild(c)
+
+        experimentContent.appendChild(mainSection)
         
         let header = document.querySelector('header')
         header.after(experimentContent)
@@ -52,86 +51,54 @@
         }, 1000);
     }
 
-    function createHero() {
-        let hero = document.createElement('div')
-        hero.id = 'hero'
+    function createTopBanner() {
+        let topBanner = document.createElement('section')
+        topBanner.id = 'topBanner'
+
         let c = createContainer()
-        c.classList.add('heroContainer')
+        let h1 = document.createElement('h1')
+        h1.innerHTML = 'Compare costs and get quotes for popular legal services'
 
-        c.innerHTML += '<div><h1>The UK’s first legal comparison site</h1><p>Save time and money finding a legal expert</p><div class="trusted"><i class="fa-solid fa-circle-check"></i><p>We’ve helped over 50,000 people find a law firm that was right for them</p></div></div>'
+        c.appendChild(h1)
 
-        hero.appendChild(c)
-        return hero
+        let steps = document.createElement('div')
+        steps.id = 'topSteps'
+        steps.innerHTML = `<strong>Find expert lawyers</strong>`
+        steps.innerHTML += `<i class='fa fa-chevron-right'></i>`
+        steps.innerHTML += `<strong>Get instant quotes</strong>`
+        steps.innerHTML += `<i class='fa fa-chevron-right'></i>`
+        steps.innerHTML += `<strong>Save money</strong>`
+
+        c.appendChild(steps)
+        topBanner.appendChild(c)
+
+        return topBanner
     }
 
-    function createTopCards() {
-        let topCards = document.createElement('div')
-        topCards.id = 'topCards'
-        topCards.classList.add('py-3')
+    function createIntroSection() {
+        let intro = document.createElement('section')
+        intro.id = 'intro'
         let c = createContainer()
-        let h = document.createElement('h2')
-        h.classList.add('mb-3')
-        h.innerHTML = 'Compare costs and get quotes for popular legal services'
-        c.appendChild(h)
-        let row = document.createElement('div')
-        row.classList.add('row')
+        let r = document.createElement('div')
+        r.classList.add('row')
 
-        let o = [
-            {
-                title: 'draft an individual will',
-                img: 'https://www.thelawsuperstore.co.uk/MediaLibrary/TheLawSuperstore/SampleMediaLibrary/Wills_Probate_2.jpg',
-                content: 'Have your will written by our specialist legal experts.',
-                link: '/personal/wills-probate/wills/draft-individual-will/compare'
-            },
-            {
-                title: 'power of attorney for an individual',
-                img: 'https://www.thelawsuperstore.co.uk/MediaLibrary/TheLawSuperstore/SampleMediaLibrary/TLS%20Homepage/MicrosoftTeams-image-5.png',
-                content: 'If you need to make a power of attorney, we can help.',
-                link: '/personal/wills-probate/protecting-others/power-of-attorney-for-an-individual/compare'
-            },
-            {
-                title: 'equity transfer',
-                img: 'https://www.thelawsuperstore.co.uk/MediaLibrary/TheLawSuperstore/SampleMediaLibrary/Property_1.jpg',
-                content: 'We have specialist conveyancing firms who can transfer equity in your home.',
-                link: '/personal/property/equity-matters/equity-transfer/compare/'
-            },
-            {
-                title: 'start divorce proceedings',
-                img: 'https://www.thelawsuperstore.co.uk/MediaLibrary/TheLawSuperstore/SampleMediaLibrary/Divorce_1.jpg',
-                content: 'Our specialist family law firms will guide you through the divorce process.',
-                link: '/personal/family/break-up-advice/starting-divorce-proceedings/compare'
-            }
-        ]
+        let col1 = document.createElement('div')
+        col1.classList.add('col-12', 'col-md-6')
+        col1.innerHTML = '<p>We cover a wide variety of legal services, ranging from Property to Personal Injury, and Business Employment to Business Disputes.</p>'
+        let col2 = document.createElement('div')
 
-        o.forEach(item => {
-            let col = document.createElement('div')
-            col.classList.add('col-12', 'col-md-6', 'col-lg-3')
-            let c = new card(item)
-            col.appendChild(c)
-            row.appendChild(col)
-        })
+        col2.innerHTML += '<div><i class="fa fa-check"></i><strong>Save money by comparing costs</strong></div>'
+        col2.innerHTML += '<div><i class="fa fa-check"></i><strong>Save money by comparing costs</strong></div>'
+        col2.innerHTML += '<div><i class="fa fa-check"></i><strong>Save money by comparing costs</strong></div>'
 
-        c.appendChild(row)
+        col2.classList.add('col-12', 'col-md-6')
+        r.appendChild(col1)
+        r.appendChild(col2)
+        c.appendChild(r)
 
-        topCards.appendChild(c)
+        intro.appendChild(c)
 
-        function card(data) {
-            this.title = data.title
-            this.img = data.img
-            this.content = data.content
-            this.link = data.link
-
-            //make link
-            let card = document.createElement('a')
-            card.href = this.link
-            card.classList.add('top-card')
-
-            card.innerHTML = `<h3>${this.title}</h3><img src='${this.img}' /><p>${this.content}</p><a class='btn btn--orange' href='${this.link}'>Get quotes</a>`
-
-            return card
-        }
-
-        return topCards
+        return intro
     }
 
     function createCategories() {
@@ -141,11 +108,9 @@
         cats.appendChild(c)
 
         let sectionTitle = document.createElement('h2')
-        sectionTitle.innerHTML = 'Compare and get legal quotes for many types of legal services'
+        sectionTitle.innerHTML = "I'd like to compare quotes for..."
         c.appendChild(sectionTitle)
-        let p = document.createElement('p')
-        p.innerHTML = 'We cover a wide variety of legal services, ranging from Property to Personal Injury, and Business Employment to Business Disputes.'
-        c.appendChild(p)
+
 
         let row = document.createElement('div')
         row.classList.add('row')
@@ -227,117 +192,6 @@
             return cat
         }
         return cats
-    }
-
-    function  createWorksSection() {
-        let works = document.createElement('section')
-        works.id = 'works'
-        let c = createContainer()
-        works.appendChild(c)
-        
-        let row = document.createElement('div')
-        row.classList.add('row')
-        let c1 = document.createElement('div')
-        c1.classList.add('col-12', 'col-md-6')
-
-        //add everything to c1 and then append to row
-        let h = document.createElement('h2')
-        h.innerHTML = 'Compare lawyers in three simple steps'
-        c1.appendChild(h)
-
-        c1.appendChild(new point({ icon: '<i class="fa-solid fa-1"></i>', text: 'Pick the legal service you need.'}))
-        c1.appendChild(new point({ icon: '<i class="fa-solid fa-2"></i>', text: 'Fill in a few details on our quick quote form.'}))
-        c1.appendChild(new point({ icon: '<i class="fa-solid fa-3"></i>', text: 'Get instant quotes to your inbox.'}))
-
-        function point(data) {
-            this.icon = data.icon
-            this.text = data.text
-
-            let d = document.createElement('div')
-            d.classList.add('works-point')
-            d.innerHTML = `${this.icon} <p>${this.text}</p>`
-            return d
-        }
-
-
-        row.appendChild(c1)
-
-        let c2 = document.createElement('div')
-        c2.classList.add('col-12', 'col-md-6')
-
-        //add everything to c2 and then append to row
-        c2.innerHTML = '<iframe width="100%" height="315" src="https://www.youtube.com/embed/MC-JKSOu0Ug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-
-        row.appendChild(c2)
-        c.appendChild(row)
-        
-        return works
-    }
-    function  createWhoSection() {
-        let who = document.createElement('section')
-        who.id = 'who'
-        let c = createContainer()
-        who.appendChild(c)
-        
-        let row = document.createElement('div')
-        row.classList.add('row')
-        let c1 = document.createElement('div')
-        c1.classList.add('col-12', 'col-md-6')
-
-        //add everything to c1 and then append to row
-        let h = document.createElement('h2')
-        h.innerHTML = 'Who is The Law Superstore?'
-        c1.appendChild(h)
-
-        let leftPara = document.createElement('p')
-        leftPara.innerHTML = "The Law Superstore is the UK’s first legal comparison site, designed to save you money when looking for a lawyer. Get instant quotes, compare prices, locations and features and choose the law firm that’s right for you. And we’re completely free to use.<br /><br />With over 130 legal services on offer, from divorce to personal injury claims, we can help you get a great deal on your legal fees. You compare everything else, why not lawyers?"
-        c1.appendChild(leftPara)
-
-        let checkList = document.createElement('ul')
-
-        checkList.appendChild(new checkPoint('Save money by comparing costs'))
-        checkList.appendChild(new checkPoint('We only work with quality, experienced and regulated legal firms '))
-        checkList.appendChild(new checkPoint('Competitive prices across lots of locations'))
-        //checkList.appendChild(new checkPoint('Hear from your chosen provider within 4 hours'))
-        //checkList.appendChild(new checkPoint('Only pay when you\'ve spoken and agree terms'))
-        //checkList.appendChild(new checkPoint('Prices available for initial advice only and full service'))
-
-        c1.appendChild(checkList)
-
-        function checkPoint(text) {
-            this.text = text
-            let x = document.createElement('li')
-            x.innerHTML = `<div>${this.text}</div>`
-            return x
-        }
-
-        row.appendChild(c1)
-
-        let c2 = document.createElement('div')
-        c2.classList.add('col-12', 'col-md-6')
-
-        c2.appendChild(new boldPoint({ icon: '<i class="fa-solid fa-certificate"></i>', title: 'Find expert lawyers', text: 'All our legal service providers are regulated, accredited, and strictly vetted.' }))
-
-        c2.appendChild(new boldPoint({ icon: '<i class="fa-solid fa-minimize"></i>', title: 'Get instant quotes', text: 'Start comparing lawyers in 30 seconds.' }))
-
-        c2.appendChild(new boldPoint({ icon: '<i class="fa-solid fa-sterling-sign"></i>', title: 'Save money', text: 'Choose a law firm that meets your needs.' }))
-
-        //add everything to c2 and then append to row
-        function boldPoint(data) {
-            this.icon = data.icon
-            this.title = data.title
-            this.text = data.text
-
-            let x = document.createElement('div')
-            x.classList.add('bold-point')
-            x.innerHTML = `<div>${this.icon}</div> <div><h3>${this.title}</h3><p>${this.text}</p></div>`
-            return x
-        }
-
-        row.appendChild(c2)
-        c.appendChild(row)
-        
-        return who
     }
 
     function createFaqsSection() {
@@ -706,7 +560,7 @@ return faqs
 
     run()
     
-//};
+};
 
 function expandCat(el) {
     console.log(el)

@@ -6,6 +6,66 @@ body, .wrapper {
     background: #F2F7FA !important;
     min-width: unset !important;
 }
+
+#topBanner {
+    background-color: #328396;
+    height: 200px;
+}
+#topBanner .container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    justify-content: center;
+}
+#topBanner h1 {
+    color: #fff;
+    text-align: center;
+    margin-top: -25px;
+    font-weight: 700;
+}
+#topSteps {
+    position: absolute;
+    bottom: 0;
+    background-color: #002E3F;
+    color: #fff;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+#mainSection .container {
+    background-color: #fff;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#intro {
+    padding: 40px;
+    text-align: center;
+}
+#intro p {
+    max-width: 400px;
+    text-align: left;
+    padding-left: 50px;
+    padding-top: 10px;
+}
+#intro i {
+    color: #008c28;
+    font-size: 27px;
+    margin-right: 10px;
+}
+#intro .row .col-12:nth-child(2) div {
+    padding: 6px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .slideshow {
     display: none;
 }
@@ -142,6 +202,17 @@ strong {
 }
 #categories {
     padding: 39px 0;
+    background-color: #F5F5F5;
+    padding: 30px;
+    border-radius: 10px;
+}
+#categories .container {
+    background-color: #F5F5F5;
+}
+#categories h2 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 16px;
 }
 .tls-cat-link {
     background-color: #fff;
@@ -415,7 +486,7 @@ article.testimonial {
 }
 
 #creditations {
-    background-color: var(--tls-light-blue);
+    /* background-color: var(--tls-light-blue); */
     color: #fff;
     padding: 48px 0 48px 0;
 }
@@ -431,10 +502,11 @@ article.testimonial {
     border-radius: 10px;
     align-items: center;
     justify-content: center;
+    border: 1px solid rgb(208, 208, 208);
 }
 #logosDiv img {
     object-fit: contain;
-    max-width: 200px;
+    max-width: 130px;
     width: 200px;
 }
 @media(max-width: 992px) {
@@ -451,8 +523,8 @@ article.testimonial {
         margin-bottom: 20px;
     }
 }
-#creditations h2 {
-   color: #fff !important;
+#creditations h2, #creditations p {
+   color: #002E3F;
 }
 #topFooter a {
     display: block;
@@ -511,6 +583,10 @@ article.testimonial {
 
 #faqs {
     padding: 48px 0;
+    border-radius: 10px;
+}
+#faqs, #faqs .container {
+    background-color: #F2F7FA;
 }
 #faqs h2 {
     margin-bottom: 10px;
