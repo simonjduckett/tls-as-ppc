@@ -229,7 +229,7 @@ window.onload = (event) => {
 
             //need a row and each a col
             let cat = document.createElement('div')
-            cat.classList.add('col-12', 'col-md-6')
+            cat.classList.add('col-12', 'col-lg-6')
             
             let link = document.createElement('a')
             link.classList.add('tls-cat-link')
