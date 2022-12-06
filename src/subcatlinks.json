@@ -1,0 +1,136 @@
+{
+    "URLs &amp; layout": [
+        {
+            "text": "Buying A Property",
+            "link": "https://conveyancing.thelawsuperstore.co.uk/quoteforms/conveyancing/purchase"
+        },
+        {
+            "text": "Selling a Property",
+            "link": "https://conveyancing.thelawsuperstore.co.uk/quoteforms/conveyancing/sale"
+        },
+        {
+            "text": "Buying & Selling a Property",
+            "link": "https://conveyancing.thelawsuperstore.co.uk/quoteforms/conveyancing/sale-purchase"
+        },
+        {
+            "text": "Remortgaging a Property",
+            "link": "https://conveyancing.thelawsuperstore.co.uk/quoteforms/conveyancing/remortgage"
+        },
+        {
+            "text": "Draft Individual Will",
+            "link": "https://www.thelawsuperstore.co.uk/personal/wills-probate/wills/draft-individual-will/compare"
+        },
+        {
+            "text": "Draft Joint Wills",
+            "link": "https://www.thelawsuperstore.co.uk/personal/wills-probate/wills/draft-joint-wills/compare"
+        },
+        {
+            "text": "Contest a Will",
+            "link": "https://www.thelawsuperstore.co.uk/personal/wills-probate/dispute/contest-a-will/compare"
+        },
+        {
+            "text": "Obtain a Grant",
+            "link": "https://www.thelawsuperstore.co.uk/personal/wills-probate/dealing-with-an-estate/obtain-a-grant/compare"
+        },
+        {
+            "text": "Administer an Estate",
+            "link": "https://www.thelawsuperstore.co.uk/personal/wills-probate/dealing-with-an-estate/administer-an-estate/compare"
+        },
+        {
+            "text": "Power of Attorney for an Individual",
+            "link": "https://www.thelawsuperstore.co.uk/personal/wills-probate/protecting-others/power-of-attorney-for-an-individual/compare"
+        },
+        {
+            "text": "Power of Attorney for a Couple",
+            "link": "https://www.thelawsuperstore.co.uk/personal/wills-probate/protecting-others/power-of-attorney-for-a-couple/compare"
+        },
+        {
+            "text": "Court of Protection Deputyship",
+            "link": "https://www.thelawsuperstore.co.uk/personal/wills-probate/protecting-others/court-of-protection-deputyship/compare"
+        },
+        {
+            "text": "Starting Divorce Proceedings",
+            "link": "https://www.thelawsuperstore.co.uk/personal/family/break-up-advice/starting-divorce-proceedings/compare"
+        },
+        {
+            "text": "Respond to a Divorce Petition",
+            "link": "https://www.thelawsuperstore.co.uk/personal/family/break-up-advice/respond-to-a-divorce-petition/compare"
+        },
+        {
+            "text": "Cohabilitation Breakdown",
+            "link": "https://www.thelawsuperstore.co.uk/personal/family/break-up-advice/cohabitation-breakdown/compare"
+        },
+        {
+            "text": "Domestic Violence",
+            "link": "https://www.thelawsuperstore.co.uk/personal/family/break-up-advice/domestic-violence/compare"
+        },
+        {
+            "text": "Family Mediation",
+            "link": "https://www.thelawsuperstore.co.uk/personal/family/break-up-advice/family-mediation/compare"
+        },
+        {
+            "text": "Civil Partnership Breakdown",
+            "link": "https://www.thelawsuperstore.co.uk/personal/family/break-up-advice/civil-partnership-breakdown/compare"
+        },
+        {
+            "text": "Business Purchase",
+            "link": "https://www.thelawsuperstore.co.uk/business/business-services/business-purchase-sale/business-purchase/compare"
+        },
+        {
+            "text": "Business Sale",
+            "link": "https://www.thelawsuperstore.co.uk/business/business-services/business-purchase-sale/business-sale/compare"
+        },
+        {
+            "text": "Assignment of Lease (landlord)",
+            "link": "https://www.thelawsuperstore.co.uk/business/business-property/leases/assignment-of-lease-landlord/compare"
+        },
+        {
+            "text": "Assignment of Lease (tenant)",
+            "link": "https://www.thelawsuperstore.co.uk/business/business-property/leases/assignment-of-lease-tenant/compare"
+        },
+        {
+            "text": "New Lease (landlord)",
+            "link": "https://www.thelawsuperstore.co.uk/business/business-property/leases/new-lease-landlord/compare"
+        },
+        {
+            "text": "New Lease (tenant)",
+            "link": "https://www.thelawsuperstore.co.uk/business/business-property/leases/new-lease-tenant/compare"
+        },
+        {
+            "text": "Lease Renewal (landlord)",
+            "link": "https://www.thelawsuperstore.co.uk/business/business-property/leases/lease-renewal-landlord/compare"
+        },
+        {
+            "text": "Lease Renewal (tenant)",
+            "link": "https://www.thelawsuperstore.co.uk/business/business-property/leases/lease-renewal-tenant/compare"
+        },
+        {
+            "text": "Equity Release",
+            "link": "https://www.thelawsuperstore.co.uk/personal/property/equity-matters/equity-release/compare"
+        },
+        {
+            "text": "Equity Transfer",
+            "link": "https://www.thelawsuperstore.co.uk/personal/property/equity-matters/equity-transfer/compare"
+        },
+        {
+            "text": "Money Disputes",
+            "link": "https://www.thelawsuperstore.co.uk/personal/disputes/money-disputes/money-disputes/compare"
+        },
+        {
+            "text": "Bankruptcy Proceedings",
+            "link": "https://www.thelawsuperstore.co.uk/personal/disputes/money-disputes/bankruptcy-proceedings/compare"
+        },
+        {
+            "text": "Consumer Disputes",
+            "link": "https://www.thelawsuperstore.co.uk/personal/disputes/general-disputes/consumer-disputes/compare"
+        },
+        {
+            "text": "Neighbour Disputes",
+            "link": "https://www.thelawsuperstore.co.uk/personal/disputes/general-disputes/neighbour-disputes/compare"
+        },
+        {
+            "text": "Other Disputes",
+            "link": "https://www.thelawsuperstore.co.uk/personal/disputes/general-disputes/other-disputes/compare"
+        }
+    ]
+}

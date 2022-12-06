@@ -98,7 +98,13 @@ body, .wrapper {
     padding: 6px 0px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
+    margin-left: 28%;
+}
+@media(max-width: 480px) {
+    #intro .row .col-12:nth-child(2) {
+        margin-top: 20px;
+    }
 }
 #intro strong {
     text-align: left;

@@ -1,14 +1,151 @@
 let family = [
-    {link: '/linksometing', text: 'Child Abduction'},
-    {link: '/linksometing', text: 'Child Holiday Arrangements'},
-    {link: '/linksometing', text: 'Child Residency & Contact'},
-    {link: '/linksometing', text: 'Civil Partnership Breakdown'},
-    {link: '/linksometing', text: 'Cohabitation'},
-    {link: '/linksometing', text: 'Cohabitation breakdown'},
-    {link: '/linksometing', text: 'Domestic Violence'},
-    {link: '/linksometing', text: 'Family Mediation'},
-    {link: '/linksometing', text: 'Gender Recognition'},
-    {link: '/linksometing', text: 'Other Child Issues'},
+    {
+        "text": "Starting Divorce Proceedings",
+        "link": "https://www.thelawsuperstore.co.uk/personal/family/break-up-advice/starting-divorce-proceedings/compare"
+    },
+    {
+        "text": "Respond to a Divorce Petition",
+        "link": "https://www.thelawsuperstore.co.uk/personal/family/break-up-advice/respond-to-a-divorce-petition/compare"
+    },
+    {
+        "text": "Cohabilitation Breakdown",
+        "link": "https://www.thelawsuperstore.co.uk/personal/family/break-up-advice/cohabitation-breakdown/compare"
+    },
+    {
+        "text": "Domestic Violence",
+        "link": "https://www.thelawsuperstore.co.uk/personal/family/break-up-advice/domestic-violence/compare"
+    },
+    {
+        "text": "Family Mediation",
+        "link": "https://www.thelawsuperstore.co.uk/personal/family/break-up-advice/family-mediation/compare"
+    },
+    {
+        "text": "Civil Partnership Breakdown",
+        "link": "https://www.thelawsuperstore.co.uk/personal/family/break-up-advice/civil-partnership-breakdown/compare"
+    },
+]
+
+let property = [
+    {
+        "text": "Buying A Property",
+        "link": "https://conveyancing.thelawsuperstore.co.uk/quoteforms/conveyancing/purchase"
+    },
+    {
+        "text": "Selling a Property",
+        "link": "https://conveyancing.thelawsuperstore.co.uk/quoteforms/conveyancing/sale"
+    },
+    {
+        "text": "Buying & Selling a Property",
+        "link": "https://conveyancing.thelawsuperstore.co.uk/quoteforms/conveyancing/sale-purchase"
+    },
+    {
+        "text": "Remortgaging a Property",
+        "link": "https://conveyancing.thelawsuperstore.co.uk/quoteforms/conveyancing/remortgage"
+    },
+]
+
+let wills = [
+    {
+        "text": "Draft Individual Will",
+        "link": "https://www.thelawsuperstore.co.uk/personal/wills-probate/wills/draft-individual-will/compare"
+    },
+    {
+        "text": "Draft Joint Wills",
+        "link": "https://www.thelawsuperstore.co.uk/personal/wills-probate/wills/draft-joint-wills/compare"
+    },
+    {
+        "text": "Contest a Will",
+        "link": "https://www.thelawsuperstore.co.uk/personal/wills-probate/dispute/contest-a-will/compare"
+    },
+    {
+        "text": "Obtain a Grant",
+        "link": "https://www.thelawsuperstore.co.uk/personal/wills-probate/dealing-with-an-estate/obtain-a-grant/compare"
+    },
+    {
+        "text": "Administer an Estate",
+        "link": "https://www.thelawsuperstore.co.uk/personal/wills-probate/dealing-with-an-estate/administer-an-estate/compare"
+    },
+    {
+        "text": "Power of Attorney for an Individual",
+        "link": "https://www.thelawsuperstore.co.uk/personal/wills-probate/protecting-others/power-of-attorney-for-an-individual/compare"
+    },
+    {
+        "text": "Power of Attorney for a Couple",
+        "link": "https://www.thelawsuperstore.co.uk/personal/wills-probate/protecting-others/power-of-attorney-for-a-couple/compare"
+    },
+    {
+        "text": "Court of Protection Deputyship",
+        "link": "https://www.thelawsuperstore.co.uk/personal/wills-probate/protecting-others/court-of-protection-deputyship/compare"
+    },
+]
+
+let Business = [
+    {
+        "text": "Business Purchase",
+        "link": "https://www.thelawsuperstore.co.uk/business/business-services/business-purchase-sale/business-purchase/compare"
+    },
+    {
+        "text": "Business Sale",
+        "link": "https://www.thelawsuperstore.co.uk/business/business-services/business-purchase-sale/business-sale/compare"
+    },
+    {
+        "text": "Assignment of Lease (landlord)",
+        "link": "https://www.thelawsuperstore.co.uk/business/business-property/leases/assignment-of-lease-landlord/compare"
+    },
+    {
+        "text": "Assignment of Lease (tenant)",
+        "link": "https://www.thelawsuperstore.co.uk/business/business-property/leases/assignment-of-lease-tenant/compare"
+    },
+    {
+        "text": "New Lease (landlord)",
+        "link": "https://www.thelawsuperstore.co.uk/business/business-property/leases/new-lease-landlord/compare"
+    },
+    {
+        "text": "New Lease (tenant)",
+        "link": "https://www.thelawsuperstore.co.uk/business/business-property/leases/new-lease-tenant/compare"
+    },
+    {
+        "text": "Lease Renewal (landlord)",
+        "link": "https://www.thelawsuperstore.co.uk/business/business-property/leases/lease-renewal-landlord/compare"
+    },
+    {
+        "text": "Lease Renewal (tenant)",
+        "link": "https://www.thelawsuperstore.co.uk/business/business-property/leases/lease-renewal-tenant/compare"
+    },
+]
+
+let equity = [
+    {
+        "text": "Equity Release",
+        "link": "https://www.thelawsuperstore.co.uk/personal/property/equity-matters/equity-release/compare"
+    },
+    {
+        "text": "Equity Transfer",
+        "link": "https://www.thelawsuperstore.co.uk/personal/property/equity-matters/equity-transfer/compare"
+    },
+]
+
+let disputes = [
+    {
+        "text": "Money Disputes",
+        "link": "https://www.thelawsuperstore.co.uk/personal/disputes/money-disputes/money-disputes/compare"
+    },
+    {
+        "text": "Bankruptcy Proceedings",
+        "link": "https://www.thelawsuperstore.co.uk/personal/disputes/money-disputes/bankruptcy-proceedings/compare"
+    },
+    {
+        "text": "Consumer Disputes",
+        "link": "https://www.thelawsuperstore.co.uk/personal/disputes/general-disputes/consumer-disputes/compare"
+    },
+    {
+        "text": "Neighbour Disputes",
+        "link": "https://www.thelawsuperstore.co.uk/personal/disputes/general-disputes/neighbour-disputes/compare"
+    },
+    {
+        "text": "Other Disputes",
+        "link": "https://www.thelawsuperstore.co.uk/personal/disputes/general-disputes/other-disputes/compare"
+    }
 ]
 
 window.onload = (event) => {
@@ -106,15 +243,15 @@ window.onload = (event) => {
 
         let c = createContainer()
         let h1 = document.createElement('h1')
-        h1.innerHTML = 'Compare costs and get quotes for popular legal services'
+        h1.innerHTML = 'Compare quotes for lawyers'
 
         c.appendChild(h1)
 
         let steps = document.createElement('div')
         steps.id = 'topSteps'
-        steps.innerHTML = `<strong>Find expert lawyers</strong>`
+        steps.innerHTML = `<strong>Enter your details</strong>`
         steps.innerHTML += `<i class='fa fa-chevron-right'></i>`
-        steps.innerHTML += `<strong>Get instant quotes</strong>`
+        steps.innerHTML += `<strong>Compare quotes</strong>`
         steps.innerHTML += `<i class='fa fa-chevron-right'></i>`
         steps.innerHTML += `<strong>Save money</strong>`
 
@@ -133,12 +270,13 @@ window.onload = (event) => {
 
         let col1 = document.createElement('div')
         col1.classList.add('col-12', 'col-md-6')
-        col1.innerHTML = '<p>We cover a wide variety of legal services, ranging from Property to Personal Injury, and Business Employment to Business Disputes.</p>'
+        col1.innerHTML = '<p>We know that finding a legal professional can be confusing, so we\'re here to make it as simple and easy as possible.</p><p>Instantly compare up to 4 quotes from expert legal firms today.</p>'
         let col2 = document.createElement('div')
 
-        col2.innerHTML += '<div><i class="fa fa-check"></i><strong>Save money by comparing costs</strong></div>'
-        col2.innerHTML += '<div><i class="fa fa-check"></i><strong>Save money by comparing costs</strong></div>'
-        col2.innerHTML += '<div><i class="fa fa-check"></i><strong>Save money by comparing costs</strong></div>'
+        col2.innerHTML += '<div><i class="fa fa-check"></i><strong>Regulated</strong></div>'
+        col2.innerHTML += '<div><i class="fa fa-check"></i><strong>Manually reviewed</strong></div>'
+        col2.innerHTML += '<div><i class="fa fa-check"></i><strong>Rated</strong></div>'
+        col2.innerHTML += '<div><i class="fa fa-check"></i><strong>Credit checked</strong></div>'
 
         col2.classList.add('col-12', 'col-md-6')
         r.appendChild(col1)
@@ -166,23 +304,17 @@ window.onload = (event) => {
         c.appendChild(row)
 
         let o = [
+            {
+                icon: '<i class="fa-solid fa-house-user"></i>',
+                name: 'Property Ownership (Conveyancing)',
+                content: 'Equity release, transferring equity, leases and more … ',
+                link: 'https://www.thelawsuperstore.co.uk/property/equity-matters'
+            },
             { 
                 icon: '<i class="fa-solid fa-book"></i>',
                 name: 'Wills & Probate',
                 content: 'Write a will, contest a will, power of attorney, and more … ',
                 link: '/wills-probate'
-            },
-            {
-                icon: '<i class="fa-solid fa-house-user"></i>',
-                name: 'Property',
-                content: 'Equity release, transferring equity, leases and more … ',
-                link: 'https://www.thelawsuperstore.co.uk/property/equity-matters'
-            },
-            {
-                icon: '<i class="fa-solid fa-house"></i>',
-                name: 'Conveyancing',
-                content: 'Buying a property, selling a property, re-mortgaging a property, and more … ',
-                link: 'https://www.thelawsuperstore.co.uk/property/property-ownership'
             },
             {
                 icon: '<i class="fa-solid fa-people-roof"></i>',
@@ -192,28 +324,34 @@ window.onload = (event) => {
             },
             {
                 icon: '<i class="fa-solid fa-briefcase"></i>',
-                name: 'Business Property',
+                name: 'Business',
                 content: 'Buying commercial property, selling commercial property, leases, and more … ',
                 link: 'https://www.thelawsuperstore.co.uk/business/business-property'
             },
             {
+                icon: '<i class="fa-solid fa-house"></i>',
+                name: 'Equity Matters',
+                content: 'Buying a property, selling a property, re-mortgaging a property, and more … ',
+                link: 'https://www.thelawsuperstore.co.uk/property/property-ownership'
+            },
+            {
                 icon: '<i class="fa-solid fa-person-harassing"></i>',
-                name: 'Personal Disputes',
+                name: 'Disputes',
                 content: 'Neighbour disputes, money disputes, consumer disputes, and more … ',
                 link: 'https://www.thelawsuperstore.co.uk/disputes'
             },
-            {
-                icon: '<i class="fa-solid fa-car"></i>',
-                name: 'Motor Offences',
-                content: 'Dangerous driving charges, careless driving charges, speeding offences, and more … ',
-                link: 'https://www.thelawsuperstore.co.uk/motor-offences'
-            },
-            {
-                icon: '<i class="fa-solid fa-user-nurse"></i>',
-                name: 'Employment',
-                content: 'Unfair dismissal, discrimination claims, disciplinary hearings, and more … ',
-                link: 'https://www.thelawsuperstore.co.uk/employment'
-            }
+            // {
+            //     icon: '<i class="fa-solid fa-car"></i>',
+            //     name: 'Motor Offences',
+            //     content: 'Dangerous driving charges, careless driving charges, speeding offences, and more … ',
+            //     link: 'https://www.thelawsuperstore.co.uk/motor-offences'
+            // },
+            // {
+            //     icon: '<i class="fa-solid fa-user-nurse"></i>',
+            //     name: 'Employment',
+            //     content: 'Unfair dismissal, discrimination claims, disciplinary hearings, and more … ',
+            //     link: 'https://www.thelawsuperstore.co.uk/employment'
+            // }
         ]
 
         o.forEach(cat => {
@@ -252,9 +390,9 @@ window.onload = (event) => {
         let c = createContainer()
 
         let steps = [
-            {icon: "<i class='fa fa-check'></i>", text: 'Fill in form get quotes'},
-            {icon: "<i class='fa fa-check'></i>", text: 'Fill in form get quotes'},
-            {icon: "<i class='fa fa-check'></i>", text: 'Fill in form get quotes'},
+            { icon: "<i class='fa fa-check'></i>", text: '80% of our customers would recommend us'},
+            {icon: "<i class='fa fa-check'></i>", text: 'Non dodge lawyers'},
+            { icon: "<i class='fa fa-check'></i>", text: 'We’ve helped over 50,000 people find a law firm that was right for them'},
         ]
 
         steps.forEach(step => {
@@ -624,6 +762,11 @@ return faqs
         let links = []
         let html = ''
         if (cat === 'Family') links = family
+        if (cat === 'Wills & Probate') links = wills
+        if (cat === 'Equity Matters') links = equity
+        if (cat === 'Disputes') links = disputes
+        if (cat === 'Business') links = Business
+        if (cat === 'Property Ownership (Conveyancing)') links = Business
 
         links.forEach(link => {
             html += `<a href='${link.link}'>${link.text}</a>`
