@@ -232,6 +232,11 @@ window.onload = (event) => {
         c.appendChild(backBtn)
         innerModal.appendChild(c)
 
+        let close = document.createElement('i')
+        close.classList.add('fa-solid', 'fa-xmark', 'allowhide')
+        close.addEventListener('click', hideModal, false)
+        innerModal.appendChild(close)
+
         tlsModal.appendChild(innerModal)
 
         document.querySelector('body').appendChild(tlsModal)
@@ -766,7 +771,7 @@ return faqs
         if (cat === 'Equity Matters') links = equity
         if (cat === 'Disputes') links = disputes
         if (cat === 'Business') links = Business
-        if (cat === 'Property Ownership (Conveyancing)') links = Business
+        if (cat === 'Property Ownership (Conveyancing)') links = property
 
         links.forEach(link => {
             html += `<a href='${link.link}'>${link.text}</a>`
