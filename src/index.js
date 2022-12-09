@@ -148,7 +148,7 @@ let disputes = [
     }
 ]
 
-window.onload = (event) => {
+//window.onload = (event) => {
     function run() {
         let experimentContent = document.createElement('div')
         experimentContent.classList.add('rwd-bs')
@@ -248,17 +248,17 @@ window.onload = (event) => {
 
         let c = createContainer()
         let h1 = document.createElement('h1')
-        h1.innerHTML = 'Compare quotes for lawyers'
+        h1.innerHTML = 'Compare quotes for lawyers & solicitors'
 
         c.appendChild(h1)
 
         let steps = document.createElement('div')
         steps.id = 'topSteps'
-        steps.innerHTML = `<strong>Enter your details</strong>`
+        steps.innerHTML = `<strong>1. Fill out our quick quote form</strong>`
         steps.innerHTML += `<i class='fa fa-chevron-right'></i>`
-        steps.innerHTML += `<strong>Compare quotes</strong>`
+        steps.innerHTML += `<strong>2. Get instant quotes to your inbox</strong>`
         steps.innerHTML += `<i class='fa fa-chevron-right'></i>`
-        steps.innerHTML += `<strong>Save money</strong>`
+        steps.innerHTML += `<strong>3. Save money</strong>`
 
         c.appendChild(steps)
         topBanner.appendChild(c)
@@ -278,9 +278,10 @@ window.onload = (event) => {
         col1.innerHTML = '<p>We know that finding a legal professional can be confusing, so we\'re here to make it as simple and easy as possible.</p><p>Instantly compare up to 4 quotes from expert legal firms today.</p>'
         let col2 = document.createElement('div')
 
+        col2.innerHTML += '<h2>Our legal partners are:</h2>'
+
         col2.innerHTML += '<div><i class="fa fa-check"></i><strong>Regulated</strong></div>'
         col2.innerHTML += '<div><i class="fa fa-check"></i><strong>Manually reviewed</strong></div>'
-        col2.innerHTML += '<div><i class="fa fa-check"></i><strong>Rated</strong></div>'
         col2.innerHTML += '<div><i class="fa fa-check"></i><strong>Credit checked</strong></div>'
 
         col2.classList.add('col-12', 'col-md-6')
@@ -311,8 +312,8 @@ window.onload = (event) => {
         let o = [
             {
                 icon: '<i class="fa-solid fa-house-user"></i>',
-                name: 'Property Ownership (Conveyancing)',
-                content: 'Equity release, transferring equity, leases and more … ',
+                name: 'Conveyancing',
+                content: 'Buying a property, selling a property, re-mortgaging a property, and more … ',
                 link: 'https://www.thelawsuperstore.co.uk/property/equity-matters'
             },
             { 
@@ -324,25 +325,25 @@ window.onload = (event) => {
             {
                 icon: '<i class="fa-solid fa-people-roof"></i>',
                 name: 'Family',
-                content: 'Divorce, child arrangements, financial settlements, and more … ',
+                content: 'Divorce, financial settlements, child arrangements, and more … ',
                 link: 'https://www.thelawsuperstore.co.uk/family'
             },
             {
                 icon: '<i class="fa-solid fa-briefcase"></i>',
                 name: 'Business',
-                content: 'Buying commercial property, selling commercial property, leases, and more … ',
+                content: 'Buying a business, selling a business, commercial leases, and more … ',
                 link: 'https://www.thelawsuperstore.co.uk/business/business-property'
             },
             {
                 icon: '<i class="fa-solid fa-house"></i>',
                 name: 'Equity Matters',
-                content: 'Buying a property, selling a property, re-mortgaging a property, and more … ',
+                content: 'Equity release and transferring equity.',
                 link: 'https://www.thelawsuperstore.co.uk/property/property-ownership'
             },
             {
                 icon: '<i class="fa-solid fa-person-harassing"></i>',
                 name: 'Disputes',
-                content: 'Neighbour disputes, money disputes, consumer disputes, and more … ',
+                content: 'Money disputes, consumer disputes, neighbour disputes, and more …',
                 link: 'https://www.thelawsuperstore.co.uk/disputes'
             },
             // {
@@ -395,9 +396,9 @@ window.onload = (event) => {
         let c = createContainer()
 
         let steps = [
-            { icon: "<i class='fa fa-check'></i>", text: '80% of our customers would recommend us'},
-            {icon: "<i class='fa fa-check'></i>", text: 'Non dodge lawyers'},
-            { icon: "<i class='fa fa-check'></i>", text: 'We’ve helped over 50,000 people find a law firm that was right for them'},
+            { icon: "<i class='fa-solid fa-comment'></i>", text: 'Recommended by 80% of our customers'},
+            { icon: "<i class='fa-solid fa-certificate'></i>", text: 'All our legal professionals are regulated and accredited'},
+            { icon: "<i class='fa-solid fa-handshake-angle'></i>", text: 'We’ve helped over 50,000 people find their lawyer'},
         ]
 
         steps.forEach(step => {
@@ -476,7 +477,7 @@ return faqs
 
         let heading = document.createElement('h2')
         heading.classList.add('mb-2')
-        heading.innerHTML = 'What our clients say'
+        heading.innerHTML = 'Read our reviews'
 
         con.appendChild(heading)
 
@@ -499,6 +500,10 @@ return faqs
             let y = document.createElement('div')
             let j = 0
             while(j < 5) {
+                if(i === 2 && j === 4) {
+                    y.innerHTML += '<i class="fa-regular fa-star"></i>'
+                    break
+                }
                 y.innerHTML += '<i class="fa-solid fa-star"></i>'
                 j++
             }
@@ -743,7 +748,7 @@ return faqs
     }
 
     //don't include in production
-    document.querySelector('head').innerHTML += '<style>.tls-cookie-popup {display: none !important;}.footer{display:none;}</style>'
+    //document.querySelector('head').innerHTML += '<style>.tls-cookie-popup {display: none !important;}.footer{display:none;}</style>'
 
     
     createModal()
@@ -771,7 +776,7 @@ return faqs
         if (cat === 'Equity Matters') links = equity
         if (cat === 'Disputes') links = disputes
         if (cat === 'Business') links = Business
-        if (cat === 'Property Ownership (Conveyancing)') links = property
+        if (cat === 'Conveyancing') links = property
 
         links.forEach(link => {
             html += `<a href='${link.link}'>${link.text}</a>`
@@ -792,7 +797,7 @@ return faqs
         c.classList.add('container')
         return c
     }
-};
+//};
 
 function expandCat(el) {
     console.log(el)

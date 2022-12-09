@@ -11,6 +11,14 @@ body, .wrapper {
     background-color: #328396;
     height: 200px;
 }
+@media(max-width: 768px) {
+    #topBanner {
+        height: 150px;
+    }
+    #topBanner h1 {
+        margin-top: 0px !important;
+    }
+}
 #topBanner .container {
     display: flex;
     align-items: center;
@@ -21,8 +29,9 @@ body, .wrapper {
 #topBanner h1 {
     color: #fff;
     text-align: center;
-    margin-top: -25px;
+    margin-top: -50px;
     font-weight: 700;
+    font-size: 40px;
 }
 @media(max-width: 480px) {
     #topBanner h1 {
@@ -30,7 +39,8 @@ body, .wrapper {
             margin-top: -52px;
         }
         #topBanner {
-            height: 150px;
+            height: auto;
+            padding: 15px 0;
         }
 }
 #topSteps {
@@ -45,12 +55,21 @@ body, .wrapper {
     padding: 15px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
+    /* text-align: center; */
+    /* white-space: nowrap; */
 }
-@media(max-width: 500px) {
-    #topSteps strong:nth-of-type(2), #topSteps i:nth-of-type(2) {
+@media(max-width: 768px) {
+    #topSteps {
         display: none;
     }
 }
+
+/* #topSteps i, #topSteps strong {
+    width: 20%;
+}
+#topSteps strong:nth-child(1) {
+    padding-left: 20px;
+} */
 
 #mainSection .container {
     background-color: #fff;
@@ -68,7 +87,7 @@ body, .wrapper {
 }
 @media(max-width: 768px) {
     #intro {
-        padding: 40px 0px;
+        padding: 20px 0px;
     }
 }
 #intro p {
@@ -76,6 +95,10 @@ body, .wrapper {
     text-align: left;
     padding-left: 50px;
     padding-top: 10px;
+}
+#intro strong {
+    text-transform: capitalize;
+    font-size: 17px;
 }
 @media((max-width: 768px) and (min-width: 380px)) {
     #intro .row .col-12:nth-child(2) div {
@@ -101,20 +124,38 @@ body, .wrapper {
     justify-content: start;
     margin-left: 28%;
 }
+@media(max-width: 768px) {
+    #intro .row .col-12:nth-child(2) div {
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 195px;
+    }
+}
 @media(max-width: 480px) {
     #intro .row .col-12:nth-child(2) {
         margin-top: 20px;
     }
+    #intro strong {
+        font-size: 16px;
+    }
 }
 #intro strong {
     text-align: left;
+}
+#intro h2 {
+    font-weight: 400;
+    font-size: 18px;
+    margin-left: -30px;
+    margin-bottom: 10px;
+    margin-top: 14px;
 }
 
 .slideshow {
     display: none;
 }
 .rwd-bs {
-    margin-top: 90px;
+    /* margin-top: 90px; */
 }
 .header {
     background: #002e3f !important;
@@ -258,6 +299,11 @@ strong {
     font-size: 22px;
     margin-bottom: 16px;
 }
+@media(max-width: 380px) {
+    #categories h2 {
+        font-size: 18px;
+    }
+}
 .tls-cat-link {
     background-color: #fff;
     display: flex;
@@ -269,6 +315,11 @@ strong {
     margin: 20px 0 10px 0;
     transition: all .3s;
     box-shadow: 5px 10px 15px #eaeaea;
+}
+@media((min-width: 992px) and (max-width: 1200px)) {
+    .tls-cat-link {
+        min-height: 145px;
+    }
 }
 .tls-cat-link div {
     pointer-events: none;
@@ -294,6 +345,11 @@ strong {
 }
 .tls-cat-link strong {
     font-size: 1.2rem;
+}
+@media(min-width: 1200px) {
+    .tls-cat-link div:nth-of-type(2) {
+            min-width: 308px;
+        }
 }
 @media(max-width: 1200px) {
     .tls-cat-link div:nth-of-type(2) {
@@ -558,6 +614,13 @@ article.testimonial {
     justify-content: center;
     border: 1px solid rgb(208, 208, 208);
 }
+@media(max-width: 768px) {
+    #logosDiv div {
+        border: none;
+        margin-bottom: 62px;
+    }
+
+}
 #logosDiv img {
     object-fit: contain;
     max-width: 130px;
@@ -708,15 +771,36 @@ article.testimonial {
 #bar .container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .barStep {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 33.33%;
+    padding: 20px;
+    font-weight: bold;
+}
+@media(max-width: 992px) {
+    .barStep {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: flex-start;
+    }
+    .barStep i {
+        margin-bottom: 10px;
+        display: block;
+        margin-right: 0;
+    }
+    .barStep:nth-of-type(3) {
+        width: 80%;
+        margin: 0 auto;
+    }
 }
 .barStep i {
-    margin-right: 10px;
+    margin-right: 15px;
     font-size: 30px;
 }
 
